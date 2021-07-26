@@ -133,7 +133,7 @@ class DoublyLinkedList {
     return nodeToRemove;
   }
   print() {
-    return JSON.stringify(this);
+    return this;
   }
 }
 
