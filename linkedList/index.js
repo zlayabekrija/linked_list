@@ -27,7 +27,7 @@ class SinglyLinkedList {
     this.tail = newTail;
     this.tail.next = null;
     this.length--;
-    this.#emptyList();
+    this.emptyList();
     return current;
   }
   shift() {
@@ -36,7 +36,7 @@ class SinglyLinkedList {
     let newHead = this.head.next;
     this.head = newHead;
     this.length--;
-    this.#emptyList();
+    this.emptyList();
     return toRemove;
   }
   unshift(val) {
@@ -52,7 +52,7 @@ class SinglyLinkedList {
     return this;
   }
   getNodeAtIndex(index) {
-    this.#isValidIndex(index);
+    this.isValidIndex(index);
     let counter = 0;
     let current = this.head;
     while (counter !== index) {
@@ -67,7 +67,7 @@ class SinglyLinkedList {
     return nodeToUpdate;
   }
   insert(index, val) {
-    this.#isValidIndex(index);
+    this.isValidIndex(index);
     if (index === 0) return this.unshift(val);
     if (index === this.length) return this.push(val);
 
@@ -80,7 +80,7 @@ class SinglyLinkedList {
     return this;
   }
   removeNode(index) {
-    this.#isValidIndex(index);
+    this.isValidIndex(index);
     if (index === 0) return this.shift();
     if (index === this.length - 1) return this.pop();
     let nodeParent = this.getNodeAtIndex(index - 1);
@@ -94,13 +94,13 @@ class SinglyLinkedList {
     return JSON.stringify(this);
   }
 
-  #emptyList() {
+  emptyList() {
     if (this.length === 0) {
       this.head = null;
       this.tail = null;
     }
   }
-  #isValidIndex(index) {
+  isValidIndex(index) {
     if (index < 0 || index >= this.length) throw Error(INVALID_INDEX);
   }
 }
