@@ -28,12 +28,12 @@ const startList = new Date().getTime();
 
 const list = new SinglyLinkedList();
 
-while (list.length < 1e5) {
-  list.push(createRandomNumber());
+while (list.length < 1e7) {
+  list.unshift(createRandomNumber());
 }
 
 while (list.length) {
-  list.pop();
+  list.shift();
 }
 
 const endList = new Date().getTime();
@@ -46,12 +46,12 @@ const startDouble = new Date().getTime();
 
 const doubleList = new DoublyLinkedList();
 
-while (doubleList.length < 1e5) {
-  doubleList.push(createRandomNumber());
+while (doubleList.length < 1e7) {
+  doubleList.unshift(createRandomNumber());
 }
 
 while (doubleList.length) {
-  doubleList.pop();
+  doubleList.shift();
 }
 
 const endDouble = new Date().getTime();

@@ -1,5 +1,6 @@
 const Queue = require('../queue');
 const Stack = require('../stack');
+const {FgBlue, FgCyan} = require('../utils/consoleColors');
 
 class MessageQueue extends Queue {
   constructor() {
@@ -25,7 +26,7 @@ let allMessages = '';
 while (messagesQueue.length) {
   allMessages += messagesQueue.dequeue().value + '\n';
 }
-console.log(allMessages);
+console.log(FgBlue, 'Stack array-like push/pop \n', allMessages);
 
 class MessagesStack extends Stack {
   constructor() {
@@ -48,4 +49,4 @@ let allMessagesStack = '';
 while (messageStack.length) {
   allMessagesStack += messageStack.pop().value + '\n';
 }
-console.log(allMessagesStack);
+console.log(FgCyan, 'Queue enqueue/dequeue \n', allMessagesStack);
