@@ -1,4 +1,10 @@
-const data = require('../data.js');
+let data;
+try {
+  data = require('../data.js');
+} catch (e) {
+  console.log(`Please run 'npm run generate:data' or 'yarn generate:data' first`);
+  process.exit(1);
+}
 
 function iterativeOOfN(data, lookup) {
   const startTime = new Date().getTime();
