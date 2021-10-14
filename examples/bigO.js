@@ -29,13 +29,3 @@ function iterativeOLogOfN(data, lookup) {
 }
 console.log(iterativeOOfN(data, -1));
 console.log(iterativeOLogOfN(data, -1));
-// let i = 0;
-// const arr = [];
-// while (i < 1e7) {
-//   arr.push(i);
-//   i++;
-// }
-// const result = 'module.exports=' + JSON.stringify(arr);
-// require('fs').writeFile('data.js', result, function (err) {
-//   console.log(err ? 'Error :' + err : 'ok');
-// });
